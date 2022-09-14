@@ -1,8 +1,7 @@
 //
 //  AppDelegate.swift
 //  homework2
-//
-//  Created by amarenasoftware on 13.09.2022.
+
 //
 
 import UIKit
