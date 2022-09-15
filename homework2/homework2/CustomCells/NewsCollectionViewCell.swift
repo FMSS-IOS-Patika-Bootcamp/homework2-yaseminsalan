@@ -28,5 +28,6 @@ class NewsCollectionViewCell: UICollectionViewCell {
     @IBAction func goDetailScreenBtn(_ sender: Any) {
         //we triggered the closure when the button is pressed
         goDetailButtonAction?(row)
+        
     }
 }

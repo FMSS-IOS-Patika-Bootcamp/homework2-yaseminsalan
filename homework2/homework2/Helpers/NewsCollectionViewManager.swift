@@ -41,7 +41,7 @@ extension NewsCollectionViewManager: UICollectionViewDelegate,UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
     }
-    
+  
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: customCellIdentifier, for: indexPath) as! NewsCollectionViewCell
         cell.newsImage.image = UIImage(named: items[indexPath.row].image)
@@ -52,7 +52,21 @@ extension NewsCollectionViewManager: UICollectionViewDelegate,UICollectionViewDa
         //cell actions moved to controllers
         cell.goDetailButtonAction = { row in
            
+            //
+            if let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newsDetailPageStroyboard") as? NewsDetailPageViewController
+            {
+                vc.newsDetailItem = self.items[indexPath.row]
+                self.controller?.navigationController?.pushViewController(vc, animated: true)
+             
+            }
             
+            
+            
+            
+            
+            
+            
+          
         }
         
         return cell
@@ -78,7 +92,4 @@ extension NewsCollectionViewManager: UICollectionViewDelegateFlowLayout {
     }*/
 }
 
-/*func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return  CGSize(width: (collectionView.frame.size.width - 10) / 2, height: (collectionView.frame.size.width - 10) / 2)
-}
-*/
+
