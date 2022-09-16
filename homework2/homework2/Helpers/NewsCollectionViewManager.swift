@@ -51,22 +51,12 @@ extension NewsCollectionViewManager: UICollectionViewDelegate,UICollectionViewDa
         //Closure is set
         //cell actions moved to controllers
         cell.goDetailButtonAction = { row in
-           
-            //
             if let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newsDetailPageStroyboard") as? NewsDetailPageViewController
             {
-                vc.newsDetailItem = self.items[indexPath.row]
+                vc.newsDetailItem = self.items[row]
                 self.controller?.navigationController?.pushViewController(vc, animated: true)
              
             }
-            
-            
-            
-            
-            
-            
-            
-          
         }
         
         return cell

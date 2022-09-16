@@ -10,14 +10,11 @@ class NewsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var newsImage: UIImageView!
-    
     @IBOutlet weak var newsDescriptionLabel: UILabel!
-    
     @IBOutlet weak var goDetailScreenBtn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-      
         cellView.layer.cornerRadius = 10
         cellView.layer.masksToBounds = true
         // Initialization code

@@ -17,14 +17,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //collectionHelper does all collectionView operations, so we have divided the operations into a helper class.
-        
         collectionHelper = .init(collectionView: newsCollectionView, vc: self)
         collectionHelper.set(items: newsList)
-       
         navigationController?.navigationBar.topItem!.title = "HABERLER"
-        
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    
 }
